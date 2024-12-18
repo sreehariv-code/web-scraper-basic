@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 const config = {
   searxngInstance: "https://search.ascend.de",
   port: process.env.PORT || 3000,

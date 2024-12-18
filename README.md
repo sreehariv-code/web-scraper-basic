@@ -39,7 +39,24 @@ Install the required Node packages by running:
 npm install
 ```
 
-### 4. Start the Service
+### 4. Configure the Application
+
+In the `src/config/config.ts` file, the following configuration options are available:
+
+```typescript
+const config = {
+  searxngInstance: "https://search.ascend.de", // URL for the search instance
+  port: process.env.PORT || 3000, // Server port (default: 3000)
+  maxResults: 5, // Maximum number of search results
+  timeout: 10000, // Request timeout in milliseconds (10 seconds)
+};
+
+export default config;
+```
+
+Feel free to modify these settings based on your needs.
+
+### 5. Start the Service
 
 To run the web scraper, execute:
 
@@ -97,5 +114,11 @@ Ensure you’re using Node v21 or newer. If you have multiple Node versions inst
 
 - **Missing Dependencies**: If `npm install` fails, try clearing the npm cache with `npm cache clean --force` and re-run the command.
 - **Port Conflicts**: Make sure port 3000 is free. Use `lsof -i :3000` to check for processes using the same port.
+
+---
+
+## License
+
+This project is licensed under UVJ Technologies.
 
 ---
